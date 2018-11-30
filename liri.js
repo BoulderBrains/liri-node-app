@@ -22,6 +22,25 @@ switch (action) {
 		break;
 }
 
+// Bands in town
+// TODO PUT IN MY API KEY
+function concertSearch() {
+// "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
+
+}
+
+function songSearch() {
+
+}
+
+function movieSearch() {
+
+}
+
+function followCommand() {
+
+}
+
 
 // access spotify api keys:
 // var spotify = new Spotify(keys.spotify);
