@@ -1,9 +1,16 @@
 require("dotenv").config();
 var axios = require("axios");
-var keys = require("keys");
+var keys = require("./keys");
+var moment = require("moment");
+var fs = require("fs");
+
+var command = process.argv[2]
+var completeCommand = process.argv;
+var searchResult = "";
+var artist = "";
 
 
-switch (action) {
+switch (command) {
 	// The case name triggers which function to run. 
 	case "concert-this":
 		concertSearch();
@@ -25,8 +32,71 @@ switch (action) {
 // Bands in town
 // TODO PUT IN MY API KEY
 function concertSearch() {
-// "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
+	// "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
 
+	for (var i = 3; i < completeCommand.length; i++) {
+		searchResult += completeCommand[i]
+		artist += (completeCommand[i] + " ");
+	}
+
+	artist = artist.slice(0, -1);
+
+	var queryURL = "https://rest.bandsintown.com/artists/" + searchResult + "/events?app_id=" + keys.BIN.key;
+	console.log(queryURL);
+
+	if (searchResult === "") {
+		console.log("You forgot to enter a band or artist name.");
+	} else {
+		axios.get(queryURL).then(
+			function (response) {
+				data = response.data
+				dataLength = response.data.length
+
+				if (dataLength > 0) {
+					for (var b = 0; b < dataLength; b++) {
+
+						console.log("======================")
+						console.log("The venue is at " + data[b].venue.name);
+
+						if (data[b].venue.region === "") {
+							console.log("The location is at: " + data[b].venue.city + ", " + data[b].venue.country);
+						} else {
+							console.log("The location is at: " + data[b].venue.city + ", " + data[b].venue.region + ", " + data[b].venue.country);
+						}
+
+						date = new Date(data[b].datetime);
+
+						var momentObj = moment(date);
+						var momentString = momentObj.format('MM/DD/YYYY');
+
+						console.log("The date is:", momentString);
+						fs.appendFile("log.txt", JSON.stringify(data[b], null, 2), function (err) {
+							if (err) {
+								return console.log(err);
+							}
+						});
+					}
+					console.log("log.txt was updated!");
+				} else {
+					console.log("Uh oh, there doesn't look like there's any upcoming concerts from " + artist)
+				}
+			}
+		).catch(function (error) {
+			if (error.response) {
+				console.log(error.response.data);
+				console.log(error.response.status);
+				console.log(error.response.headers);
+			} else if (error.request) {
+				// If the request was made but no response was received
+				// the `error.request` object comes back with details about the error
+				console.log(error.request);
+			} else {
+				// Something happened in setting up the request that triggered an Error
+				console.log("Error", error.message);
+			}
+			console.log(error.config);
+		});
+	}
 }
 
 function songSearch() {
@@ -40,37 +110,3 @@ function movieSearch() {
 function followCommand() {
 
 }
-
-
-// access spotify api keys:
-// var spotify = new Spotify(keys.spotify);
-
-var nodeArgs = process.argv;
-
-// Create an empty variable for holding the movie name
-var movieName = "";
-
-// Loop through all the words in the node argument
-// And do a little for-loop magic to handle the inclusion of "+"s
-for (var i = 2; i < nodeArgs.length; i++) {
-
-	if (i > 2 && i < nodeArgs.length) {
-		movieName = movieName + "+" + nodeArgs[i];
-	}
-	else {
-		movieName += nodeArgs[i];
-
-	}
-}
-
-// Then run a request with axios to the OMDB API with the movie specified
-var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
-
-// This line is just to help us debug against the actual URL.
-console.log(queryUrl);
-
-axios.get(queryUrl).then(
-	function (response) {
-		console.log("Release Year: " + response.data.Year);
-	}
-);
