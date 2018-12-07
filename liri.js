@@ -1,8 +1,9 @@
 require("dotenv").config();
 var axios = require("axios");
-var keys = require("./keys");
+var request = require("request");
 var moment = require("moment");
 var fs = require("fs");
+var keys = require("./keys");
 
 var command = process.argv[2]
 var completeCommand = process.argv;
@@ -105,6 +106,44 @@ function songSearch() {
 
 function movieSearch() {
 
+	// if user doesn't search a movie, look for the movie
+	// Mr. Nobody
+
+	//Title, Year released, IMDB Rating, Rotten Tomatoes Rating, country produced, language, plot, actors (top 5?)
+
+	// Store all of the arguments in an array
+	var nodeArgs = process.argv;
+
+	// Create an empty variable for holding the movie name
+	var movieName = "";
+
+	// Loop through all the words in the node argument
+	// And do a little for-loop magic to handle the inclusion of "+"s
+	for (var i = 2; i < nodeArgs.length; i++) {
+		if (i > 2 && i < nodeArgs.length) {
+			movieName = movieName + "+" + nodeArgs[i];
+		} else {
+			movieName += nodeArgs[i];
+		}
+	}
+
+	// Then run a request to the OMDB API with the movie specified
+	var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+
+	// This line is just to help us debug against the actual URL.
+	console.log(queryUrl);
+	console.log(response);
+
+	request(queryUrl, function (error, response, body) {
+
+		// If the request is successful
+		if (!error && response.statusCode === 200) {
+
+			// Parse the body of the site and recover just the imdbRating
+			// (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
+			console.log("Release Year: " + JSON.parse(body).Year);
+		}
+	});
 }
 
 function followCommand() {
