@@ -1,0 +1,101 @@
+{
+  "id": "1012667558",
+  "artist_id": "1252899",
+  "url": "https://www.bandsintown.com/e/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+  "on_sale_datetime": "",
+  "datetime": "2019-01-19T19:30:00",
+  "description": "",
+  "venue": {
+    "country": "United States",
+    "city": "Seattle",
+    "latitude": "47.6186334",
+    "name": "El Corazon",
+    "region": "WA",
+    "longitude": "-122.3293734"
+  },
+  "lineup": [
+    "Slap Shot"
+  ],
+  "offers": [
+    {
+      "type": "Tickets",
+      "url": "https://www.bandsintown.com/t/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "status": "available"
+    }
+  ]
+}{
+  "offers": [
+    {
+      "type": "Tickets",
+      "url": "https://www.bandsintown.com/t/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "status": "available"
+    }
+  ],
+  "venue": {
+    "name": "El Corazon",
+    "country": "United States",
+    "region": "WA",
+    "city": "Seattle",
+    "latitude": "47.6186334",
+    "longitude": "-122.3293734"
+  },
+  "datetime": "2019-01-19T19:30:00",
+  "on_sale_datetime": "",
+  "description": "",
+  "lineup": [
+    "Slap Shot"
+  ],
+  "id": "1012667558",
+  "artist_id": "1252899",
+  "url": "https://www.bandsintown.com/e/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+  "id": "1012667558",
+  "artist_id": "1252899",
+  "url": "https://www.bandsintown.com/e/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+  "on_sale_datetime": "",
+  "datetime": "2019-01-19T19:30:00",
+  "description": "",
+  "venue": {
+    "country": "United States",
+    "city": "Seattle",
+    "latitude": "47.6186334",
+    "name": "El Corazon",
+    "region": "WA",
+    "longitude": "-122.3293734"
+  },
+  "lineup": [
+    "Slap Shot"
+  ],
+  "offers": [
+    {
+      "type": "Tickets",
+      "url": "https://www.bandsintown.com/t/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "status": "available"
+    }
+  ]
+}{
+  "id": "1012667558",
+  "artist_id": "1252899",
+  "url": "https://www.bandsintown.com/e/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+  "on_sale_datetime": "",
+  "datetime": "2019-01-19T19:30:00",
+  "description": "",
+  "venue": {
+    "country": "United States",
+    "city": "Seattle",
+    "latitude": "47.6186334",
+    "name": "El Corazon",
+    "region": "WA",
+    "longitude": "-122.3293734"
+  },
+  "lineup": [
+    "Slap Shot"
+  ],
+  "offers": [
+    {
+      "type": "Tickets",
+      "url": "https://www.bandsintown.com/t/1012667558?app_id=2c0eed1f044b80d056a4b0991b206042&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "status": "available"
+    }
+  ]
+}

@@ -42,7 +42,7 @@ If you haven't written a markdown file yet, [click here for a rundown](https://g
 
 ### Instructions
 
-1. Navigate to the root of your project and run `npm init -y` &mdash; this will initialize a `package.json` file for your project. The `package.json` file is required for installing third party npm packages and saving their version numbers. If you fail to initialize a `package.json` file, it will be troublesome, and at times almost impossible for anyone else to run your code after cloning your project.
+<!-- 1. Navigate to the root of your project and run `npm init -y` &mdash; this will initialize a `package.json` file for your project. The `package.json` file is required for installing third party npm packages and saving their version numbers. If you fail to initialize a `package.json` file, it will be troublesome, and at times almost impossible for anyone else to run your code after cloning your project.
 
 2. Make a `.gitignore` file and add the following lines to it. This will tell git not to track these files, and thus they won't be committed to Github.
 
@@ -93,7 +93,7 @@ SPOTIFY_SECRET=your-spotify-secret
 require("dotenv").config();
 ```
 
-8. Add the code required to import the `keys.js` file and store it in a variable.
+8. Add the code required to import the `keys.js` file and store it in a variable. -->
   
 * You should then be able to access your keys information like so
 
@@ -113,7 +113,7 @@ require("dotenv").config();
 
 ### What Each Command Should Do
 
-1. `node liri.js concert-this <artist/band name here>`
+<!-- 1. `node liri.js concert-this <artist/band name here>`
 
    * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
 
@@ -121,7 +121,7 @@ require("dotenv").config();
 
      * Venue location
 
-     * Date of the Event (use moment to format this as "MM/DD/YYYY")
+     * Date of the Event (use moment to format this as "MM/DD/YYYY") -->
 
 2. `node liri.js spotify-this-song '<song name here>'`
 

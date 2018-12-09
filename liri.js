@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 var axios = require("axios");
 var request = require("request");
 var moment = require("moment");
@@ -28,13 +29,12 @@ switch (command) {
 	case "do-what-it-says":
 		followCommand();
 		break;
+	default: console.log("Function you entered, not found. Try again.");
 }
 
 // Bands in town
-// TODO PUT IN MY API KEY
+// node liri.js concert-this
 function concertSearch() {
-	// "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
-
 	for (var i = 3; i < completeCommand.length; i++) {
 		searchResult += completeCommand[i]
 		artist += (completeCommand[i] + " ");
@@ -54,8 +54,9 @@ function concertSearch() {
 				dataLength = response.data.length
 
 				if (dataLength > 0) {
+					console.log("======================")
+					console.log(artist + " has these upcoming shows:")
 					for (var b = 0; b < dataLength; b++) {
-
 						console.log("======================")
 						console.log("The venue is at " + data[b].venue.name);
 
@@ -79,7 +80,7 @@ function concertSearch() {
 					}
 					console.log("log.txt was updated!");
 				} else {
-					console.log("Uh oh, there doesn't look like there's any upcoming concerts from " + artist)
+					console.log("There are no upcoming concerts from " + artist + ". Go listen to the album on Spotify.");
 				}
 			}
 		).catch(function (error) {
