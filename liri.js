@@ -47,7 +47,7 @@ function bandSearch() {
 				if (dataLength > 0) {
 					for (var j = 0; j < dataLength; j++) {
 
-						console.log("======================")
+						console.log("================")
 						console.log("The venue is at " + data[j].venue.name);
 
 						if (data[j].venue.region === "") {
@@ -261,16 +261,17 @@ function doWhatItSays() {
 
 		switch (action) {
 			case "movie-this":
-				movieSearch()
+				movieSearch();
 				break;
 			case "concert-this":
-				bandSearch()
+				bandSearch();
 				break;
 			case "spotify-this-song":
-				songSearch();
+				spotifySearch();
 				break;
 			case "do-what-it-says":
-				doWhatItSays()
+				doWhatItSays();
+				break;
 		}
 	});
 }
