@@ -17,6 +17,7 @@ node liri.js do-what-it-says {WHATEVER YOUR HEART DESIRES}
 node liri.js concert-this {BAND NAME}
 
 <img href="assets/images/concert-this.png" />
+![alt text](http://assets/images/concert-this.png)
 
 node liri.js spotify-this-song {SONG NAME}
 
