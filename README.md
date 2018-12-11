@@ -20,7 +20,7 @@ node liri.js concert-this {BAND NAME}
 ![alt text](http://assets/images/concert-this.png)
 [[https://github.com/boulderbrains/repository/liri-node-app/master/assets/images/concert-this.png|alt=concert-this-img]]
 
-![Screenshot](concert-this.png)
+![Screenshot](assets/images/concert-this.png)
 
 node liri.js spotify-this-song {SONG NAME}
 
