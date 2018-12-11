@@ -10,22 +10,16 @@ node liri.js spotify-this-song {SONG NAME}
 
 node liri.js movie-this {MOVIE NAME}
 
-node liri.js do-what-it-says {WHATEVER YOUR HEART DESIRES}
-
 ### These command return the following: 
 
 node liri.js concert-this {BAND NAME}
-
-<img href="assets/images/concert-this.png" />
-![alt text](http://assets/images/concert-this.png)
-[[https://github.com/boulderbrains/repository/liri-node-app/master/assets/images/concert-this.png|alt=concert-this-img]]
 
 ![Screenshot](assets/images/concert-this.png)
 
 node liri.js spotify-this-song {SONG NAME}
 
-<img href="assets/images/spotify-this.png" />
+![Screenshot](assets/images/spotify-this-song.png)
 
 node liri.js movie-this {MOVIE NAME}
 
-<img href="assets/images/movie-this.png" />
+![Screenshot](assets/images/movie-this.png)
